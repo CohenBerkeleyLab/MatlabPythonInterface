@@ -10,7 +10,7 @@ function [ matval ] = python2matlab( val )
 %       py.numpy.ndarray -> matlab array
 %       py.dict -> structure (pydict2struct)
 
-if isnumeric(val)
+if isnumeric(val) || islogical(val)
     matval = val;
 elseif isa(val, 'py.str')
     matval = char(val);

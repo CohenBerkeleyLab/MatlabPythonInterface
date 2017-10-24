@@ -51,5 +51,9 @@ if strcmpi(dimorder, 'match')
     A = permute(A, ndims(A):-1:1);
 end
 
+if N.dtype == py.numpy.dtype('bool')
+    A = logical(A);
+end
+
 end
 
